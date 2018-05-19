@@ -101,5 +101,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RestClient\RestClient.csproj">
+      <Project>{38E0AEF9-5F6A-4F80-BA2A-CB8206B88E36}</Project>
+      <Name>RestClient</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
