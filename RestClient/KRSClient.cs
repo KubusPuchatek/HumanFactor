@@ -8,10 +8,10 @@ namespace HumanFactor
 {
     public class KrsClient
     {
-        public async void Get()
+        public async Task<RootObject> Get(string name)
         {
-            var result = await RestClient.Get<RootObject>("https://api-v3.mojepanstwo.pl/dane/krs_podmioty.json?conditions[q]=Bank%20Millennium");
-            //return result.ToString();
+            var result = await RestClient.Get<RootObject>("https://api-v3.mojepanstwo.pl/dane/krs_podmioty.json?conditions[q]="+name);
+            return result;
         }
     }
 }

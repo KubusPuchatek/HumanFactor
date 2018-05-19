@@ -9,7 +9,50 @@
              d:DesignWidth="800"
              >
     <Grid>
-        <Label Content="{Binding Name2}"></Label>
-        <Button x:Name="FirstButton" Command="{Binding ChangeTExtCommand}" Height="20" Width="20"/> 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="Input"
+                 Grid.Column="1"
+                 Height="20"
+                 Width="200"
+                 Text="{Binding Path=Name2,
+                                UpdateSourceTrigger=PropertyChanged}"
+                 />
+        <Button x:Name="FirstButton"
+                Grid.Column="2"
+                Height="20"
+                Width="20"
+                Command="{Binding ChangeTExtCommand}"
+                Content="Szukaj"
+                />
+
+        <ListBox x:Name="Companies"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="3"
+                 Grid.Row="1"
+                 Grid.RowSpan="2"
+                 HorizontalContentAlignment="Stretch"
+                 ItemsSource="{Binding People.RootObject.DataObject}"
+                 >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding data.nazwa}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>

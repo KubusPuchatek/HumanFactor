@@ -16,10 +16,11 @@ namespace UI.People
         {
             get
             {
-                return _changeTExtCommand ?? (_changeTExtCommand = new RelayCommand(o =>
+                return _changeTExtCommand ?? (_changeTExtCommand = new RelayCommand(async o =>
                 {
                     var krs = new KrsClient();
-                    krs.Get();
+                    People = new PersonModel();
+                    People.RootObject = await krs.Get(Name2);
                 }, o => true));
 
             }
