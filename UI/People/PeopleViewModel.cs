@@ -5,6 +5,7 @@ using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using HumanFactor;
 using UI.Helpers;
 
 namespace UI.People
@@ -15,7 +16,11 @@ namespace UI.People
         {
             get
             {
-                return _changeTExtCommand ?? (_changeTExtCommand = new RelayCommand(o => { Name2 = "asdfda"; }, o => true));
+                return _changeTExtCommand ?? (_changeTExtCommand = new RelayCommand(o =>
+                {
+                    var krs = new KrsClient();
+                    krs.Get();
+                }, o => true));
 
             }
 

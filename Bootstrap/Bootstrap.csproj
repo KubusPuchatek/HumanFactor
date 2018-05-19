@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8664A109-5020-43B8-9676-50C9DCC6F38A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Bootstrap</RootNamespace>
+    <RootNamespace>HumanFactor</RootNamespace>
     <AssemblyName>Bootstrap</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

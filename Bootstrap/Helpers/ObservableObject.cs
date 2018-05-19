@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 
-namespace Bootstrap.Helpers
+namespace HumanFactor.Helpers
 {
     public abstract class ObservableObject : INotifyPropertyChanged
     {

@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace Bootstrap.Helpers
+namespace HumanFactor.Helpers
 {
     /// <summary>
     /// A command whose sole purpose is to 
