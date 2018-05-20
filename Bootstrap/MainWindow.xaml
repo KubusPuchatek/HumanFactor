@@ -11,11 +11,6 @@
                       Height="450"
                       Width="800"
                       >
-    <Window.Resources>
-        <DataTemplate DataType="{x:Type people:PeopleViewModel}">
-            <people:PeopleView />
-        </DataTemplate>
-    </Window.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -25,7 +20,9 @@
         <ContentControl Grid.Column="0">
             <menu:MenuView />
         </ContentControl>
-        <ContentControl Grid.Column="1" Content="{Binding CurrentPageViewModel}" />
+        <ContentControl Grid.Column="1">
+            <people:PeopleView />
+        </ContentControl>
     </Grid>
 </controls:MetroWindow>
 
