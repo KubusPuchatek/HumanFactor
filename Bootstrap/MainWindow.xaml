@@ -4,6 +4,7 @@
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:menu="clr-namespace:UI.Menu;assembly=UI"
                       xmlns:people="clr-namespace:UI.People;assembly=UI"
                       mc:Ignorable="d"
                       Title="MainWindow"
@@ -17,7 +18,14 @@
     </Window.Resources>
 
     <Grid>
-        <ContentControl Content="{Binding CurrentPageViewModel}" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <ContentControl Grid.Column="0">
+            <menu:MenuView />
+        </ContentControl>
+        <ContentControl Grid.Column="1" Content="{Binding CurrentPageViewModel}" />
     </Grid>
 </controls:MetroWindow>
 

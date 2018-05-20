@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UI.Helpers;
+using UI.People;
 
 namespace UI.Menu
 {
@@ -17,8 +18,29 @@ namespace UI.Menu
             set
             {
                 _menuItemsList = value;
-                OnPropertyChanged("ItemName");
+                OnPropertyChanged("MenuItemsList");
             }
         }
+
+        public MenuViewModel()
+        {
+            MenuItemsList = new List<MenuItemModel>
+            {
+                new MenuItemModel
+                {
+                    ItemName = "Companies"
+                },
+                new MenuItemModel
+                {
+                    ItemName = "People"
+                },
+                new MenuItemModel
+                {
+                    ItemName = "History"
+                }
+            };
+        }
+
+
     }
 }
