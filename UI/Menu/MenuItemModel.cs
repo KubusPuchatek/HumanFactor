@@ -10,6 +10,7 @@ namespace UI.Menu
     public class MenuItemModel : ObservableObject
     {
         private string _itemName;
+        private string _label;
 
         public string ItemName
         {
@@ -18,6 +19,16 @@ namespace UI.Menu
             {
                 _itemName = value;
                 OnPropertyChanged("ItemName");
+            }
+        }
+
+        public string Label
+        {
+            get => _label;
+            set
+            {
+                _label = value;
+                OnPropertyChanged("Label");
             }
         }
     }

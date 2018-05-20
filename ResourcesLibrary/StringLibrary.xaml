@@ -3,6 +3,12 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib"
                     xmlns:local="clr-namespace:HumanFactor"
                     >
-
+    <!--  WINDOW  -->
     <system:String x:Key="String.Window.Title">Human Factor</system:String>
+
+    <!--  MENU  -->
+    <system:String x:Key="String.Menu.Companies">Companies</system:String>
+    <system:String x:Key="String.Menu.People">Poeple</system:String>
+    <system:String x:Key="String.Menu.History">Human Factor</system:String>
+
 </ResourceDictionary>

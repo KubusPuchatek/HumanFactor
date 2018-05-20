@@ -10,6 +10,7 @@ namespace UI.Menu
 {
     public class MenuViewModel : ObservableObject
     {
+        internal string StringKeyPrefix => "String.Menu.";
         private List<MenuItemModel> _menuItemsList;
 
         public List<MenuItemModel> MenuItemsList
@@ -28,15 +29,15 @@ namespace UI.Menu
             {
                 new MenuItemModel
                 {
-                    ItemName = "Companies"
+                    Label = "Comapnies"
                 },
                 new MenuItemModel
                 {
-                    ItemName = "People"
+                    Label = "People"
                 },
                 new MenuItemModel
                 {
-                    ItemName = "History"
+                    Label = "History"
                 }
             };
         }
