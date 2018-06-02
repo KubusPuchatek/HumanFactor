@@ -36,7 +36,7 @@ namespace HumanFactor
                 if (_changePageCommand == null)
                 {
                     _changePageCommand = new RelayCommand(
-                        p => ChangeViewModel((IBasicViewModel)p),
+                        p =>  ChangeViewModel((IBasicViewModel)p),
                         p => p is IBasicViewModel);
                 }
 
