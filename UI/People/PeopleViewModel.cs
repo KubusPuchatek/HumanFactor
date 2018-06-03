@@ -10,7 +10,7 @@ using UI.Helpers;
 
 namespace UI.People
 {
-    public class PeopleViewModel: ObservableObject, IBasicViewModel
+    public class PeopleViewModel: NavigableViewModel, IBasicViewModel
     {
         public ICommand ChangeTExtCommand
         {
@@ -27,9 +27,25 @@ namespace UI.People
 
         }
 
+        public ICommand SelectedCommand
+        {
+            get
+            {
+                return _selectedCommand ?? (_selectedCommand = new RelayCommand(async o =>
+                {
+                    OnNavigationChanged( new HumanFactorNavigationChangetArgs
+                    {
+                        ViewModel = new PeopleViewModel()
+                    });
+                }, o => true));
+            }
+        }
+
         private PersonModel _people;
         private string _name2;
         private ICommand _changeTExtCommand;
+        private ICommand _selectedCommand;
+        private string _selectedPerson;
         public string Name => "People";
 
         public string Name2
@@ -48,9 +64,31 @@ namespace UI.People
             }
         }
 
+        public string SelectedPerson
+        {
+            get => _selectedPerson;
+            set
+            {
+                _selectedPerson = value; 
+                OnPropertyChanged("SelectedPerson");
+                OnNavigationChanged(new HumanFactorNavigationChangetArgs
+                {
+                    ViewModel = new PeopleViewModel()
+                });
+            }
+        }
+
         public PeopleViewModel()
         {
             Name2 = "Jeden";
+        }
+
+        protected override void SubscribeToEvents()
+        {
+        }
+
+        protected override void UnsubscribeFromEvents()
+        {
         }
     }
 }

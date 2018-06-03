@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
+using System.Windows.Navigation;
 using HumanFactor.Helpers;
 using UI;
 using UI.People;
 
 namespace HumanFactor
 {
-    public class MainWindowViewModel : ObservableObject
+    public class MainWindowViewModel : NavigableViewModel, INavigableViewModel
     {
         #region Fields
 
@@ -20,11 +22,22 @@ namespace HumanFactor
 
         public MainWindowViewModel()
         {
+            Initialize();
+
             // Add available pages
             PageViewModels.Add(new PeopleViewModel());
 
             // Set starting page
             CurrentPageViewModel = PageViewModels[0];
+        }
+
+        private void OnNavigationChanged(object sender, HumanFactorNavigationChangetArgs e)
+        {
+            if (!PageViewModels.Contains(e.ViewModel))
+                PageViewModels.Add(e.ViewModel);
+
+            CurrentPageViewModel = PageViewModels
+                .FirstOrDefault(vm => vm == e.ViewModel);
         }
 
         #region Properties / Commands
@@ -85,5 +98,14 @@ namespace HumanFactor
         }
 
         #endregion
+       
+        protected override void SubscribeToEvents()
+        {
+            NavigationChanged += OnNavigationChanged;
+        }
+
+        protected override void UnsubscribeFromEvents()
+        {
+        }
     }
 }

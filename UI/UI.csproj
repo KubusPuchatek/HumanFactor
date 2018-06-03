@@ -59,6 +59,7 @@
     <Compile Include="Company\CompanyViewModel.cs" />
     <Compile Include="Helpers\ObservableObject.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />
+    <Compile Include="HumanFactorNavigationChangetArgs.cs" />
     <Compile Include="IBasicViewModel.cs" />
     <Page Include="Company\CompanyView.xaml">
       <SubType>Designer</SubType>
@@ -74,11 +75,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="INavigableViewModel.cs" />
     <Compile Include="Menu\MenuItemModel.cs" />
     <Compile Include="Menu\MenuView.xaml.cs">
       <DependentUpon>MenuView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Menu\MenuViewModel.cs" />
+    <Compile Include="NavigableViewModel.cs" />
     <Compile Include="People\PersonModel.cs" />
     <Compile Include="People\PeopleView.xaml.cs">
       <DependentUpon>PeopleView.xaml</DependentUpon>

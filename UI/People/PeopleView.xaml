@@ -28,6 +28,7 @@
                  />
         <Button x:Name="FirstButton"
                 Grid.Column="2"
+                Grid.Row="0"
                 Height="20"
                 Width="20"
                 Command="{Binding ChangeTExtCommand}"
@@ -41,6 +42,7 @@
                  Grid.RowSpan="2"
                  HorizontalContentAlignment="Stretch"
                  ItemsSource="{Binding People.RootObject.DataObject}"
+                 SelectedItem="{Binding SelectedPerson}"
                  >
             <ListBox.ItemTemplate>
                 <DataTemplate>
