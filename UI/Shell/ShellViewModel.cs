@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
-using System.Windows.Navigation;
-using HumanFactor.Helpers;
-using UI;
+using HumanFactor;
+using UI.Helpers;
+using UI.Interface;
 using UI.People;
 
-namespace HumanFactor
+namespace UI.Shell
 {
-    public class MainWindowViewModel : NavigableViewModel, INavigableViewModel
+
+    public class ShellViewModel: NavigableViewModel, INavigableViewModel
     {
+
         #region Fields
 
         private ICommand _changePageCommand;
@@ -20,8 +24,9 @@ namespace HumanFactor
 
         #endregion
 
-        public MainWindowViewModel()
+        public ShellViewModel()
         {
+         //   CurrentPageViewModel = CurrentPageViewModel ?? new PeopleViewModel();
             Initialize();
 
             // Add available pages
@@ -49,7 +54,7 @@ namespace HumanFactor
                 if (_changePageCommand == null)
                 {
                     _changePageCommand = new RelayCommand(
-                        p =>  ChangeViewModel((IBasicViewModel)p),
+                        p => ChangeViewModel((IBasicViewModel)p),
                         p => p is IBasicViewModel);
                 }
 
@@ -98,10 +103,10 @@ namespace HumanFactor
         }
 
         #endregion
-       
+
         protected override void SubscribeToEvents()
         {
-            NavigationChanged += OnNavigationChanged;
+            Broker.NavigationChanged += OnNavigationChanged;
         }
 
         protected override void UnsubscribeFromEvents()

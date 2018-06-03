@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using HumanFactor;
 using UI.Helpers;
+using UI.Interface;
+using UI.Shell;
 
 namespace UI.People
 {
     public class PeopleViewModel: NavigableViewModel, IBasicViewModel
     {
+        private ShellViewModel shell => new ShellViewModel();
         public ICommand ChangeTExtCommand
         {
             get
@@ -33,7 +36,7 @@ namespace UI.People
             {
                 return _selectedCommand ?? (_selectedCommand = new RelayCommand(async o =>
                 {
-                    OnNavigationChanged( new HumanFactorNavigationChangetArgs
+                    Broker.InvokeNavigationChanged(new HumanFactorNavigationChangetArgs
                     {
                         ViewModel = new PeopleViewModel()
                     });
@@ -71,7 +74,7 @@ namespace UI.People
             {
                 _selectedPerson = value; 
                 OnPropertyChanged("SelectedPerson");
-                OnNavigationChanged(new HumanFactorNavigationChangetArgs
+                Broker.InvokeNavigationChanged(new HumanFactorNavigationChangetArgs
                 {
                     ViewModel = new PeopleViewModel()
                 });

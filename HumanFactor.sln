@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestClient", "RestClient\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourcesLibrary", "ResourcesLibrary\ResourcesLibrary.csproj", "{B343CD17-A064-42C4-B511-76C594F7C50B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBroker", "EventBroker\EventBroker.csproj", "{09F02F28-3FF8-4A3E-9C8B-80F849C2CF11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Interface", "UI.Interface\UI.Interface.csproj", "{BF3C44AD-D6E2-4370-BFD9-46EB77CE7A66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{B343CD17-A064-42C4-B511-76C594F7C50B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B343CD17-A064-42C4-B511-76C594F7C50B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B343CD17-A064-42C4-B511-76C594F7C50B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09F02F28-3FF8-4A3E-9C8B-80F849C2CF11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09F02F28-3FF8-4A3E-9C8B-80F849C2CF11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09F02F28-3FF8-4A3E-9C8B-80F849C2CF11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09F02F28-3FF8-4A3E-9C8B-80F849C2CF11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF3C44AD-D6E2-4370-BFD9-46EB77CE7A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF3C44AD-D6E2-4370-BFD9-46EB77CE7A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF3C44AD-D6E2-4370-BFD9-46EB77CE7A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF3C44AD-D6E2-4370-BFD9-46EB77CE7A66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

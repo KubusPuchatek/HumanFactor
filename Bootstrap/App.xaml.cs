@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using UI.Shell;
 
 namespace HumanFactor
 {
@@ -12,8 +13,8 @@ namespace HumanFactor
         {
             base.OnStartup(e);
 
-            MainWindow app = new MainWindow();
-            MainWindowViewModel context = new MainWindowViewModel();
+            ShellView app = new ShellView();
+            ShellViewModel context = new ShellViewModel();
             app.DataContext = context;
             app.Show();
         }

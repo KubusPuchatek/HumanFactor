@@ -37,6 +37,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\packages\MahApps.Metro.1.6.4\lib\net46\MahApps.Metro.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -59,8 +62,10 @@
     <Compile Include="Company\CompanyViewModel.cs" />
     <Compile Include="Helpers\ObservableObject.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />
-    <Compile Include="HumanFactorNavigationChangetArgs.cs" />
-    <Compile Include="IBasicViewModel.cs" />
+    <Compile Include="Shell\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\ShellViewModel.cs" />
     <Page Include="Company\CompanyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -73,9 +78,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Shell\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="INavigableViewModel.cs" />
     <Compile Include="Menu\MenuItemModel.cs" />
     <Compile Include="Menu\MenuView.xaml.cs">
       <DependentUpon>MenuView.xaml</DependentUpon>
@@ -113,9 +121,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EventBroker\EventBroker.csproj">
+      <Project>{09f02f28-3ff8-4a3e-9c8b-80f849c2cf11}</Project>
+      <Name>EventBroker</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RestClient\RestClient.csproj">
       <Project>{38E0AEF9-5F6A-4F80-BA2A-CB8206B88E36}</Project>
       <Name>RestClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UI.Interface\UI.Interface.csproj">
+      <Project>{BF3C44AD-D6E2-4370-BFD9-46EB77CE7A66}</Project>
+      <Name>UI.Interface</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
