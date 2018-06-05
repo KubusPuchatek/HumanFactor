@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UI.Helpers;
-using UI.People;
 
 namespace UI.Menu
 {

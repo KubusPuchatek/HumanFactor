@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HumanFactor;
+﻿using HumanFactor;
 using UI.Helpers;
 
-namespace UI.People
+namespace UI.Company
 {
     public class PersonModel : ObservableObject
     {

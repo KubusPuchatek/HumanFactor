@@ -5,18 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UI.Shell"
              xmlns:menu="clr-namespace:UI.Menu"
-             xmlns:people="clr-namespace:UI.People"
+             xmlns:company="clr-namespace:UI.Company"
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Window.Resources>
-
-        <DataTemplate DataType="{x:Type people:PeopleViewModel}">
-
-            <people:PeopleView />
-
+        <DataTemplate DataType="{x:Type company:CompanyListViewModel}">
+            <company:CompanyListView />
         </DataTemplate>
-
+        <DataTemplate DataType="{x:Type company:CompanyViewModel}">
+            <company:CompanyView />
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>

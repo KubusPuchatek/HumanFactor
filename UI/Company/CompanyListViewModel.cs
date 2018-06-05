@@ -1,30 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.RightsManagement;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using HumanFactor;
 using UI.Helpers;
 using UI.Interface;
 using UI.Shell;
 
-namespace UI.People
+namespace UI.Company
 {
-    public class PeopleViewModel: NavigableViewModel, IBasicViewModel
+    public class CompanyListViewModel : NavigableViewModel, IBasicViewModel
     {
         private ShellViewModel shell => new ShellViewModel();
         public ICommand ChangeTExtCommand
         {
             get
             {
-                return _changeTExtCommand ?? (_changeTExtCommand = new RelayCommand(async o =>
-                {
-                    var krs = new KrsClient();
-                    People = new PersonModel();
-                    People.RootObject = await krs.Get(Name2);
-                }, o => true));
+                return _changeTExtCommand ?? (_changeTExtCommand = new RelayCommand(async o => { await Search(); }, o => true));
 
             }
 
@@ -38,7 +28,7 @@ namespace UI.People
                 {
                     Broker.InvokeNavigationChanged(new HumanFactorNavigationChangetArgs
                     {
-                        ViewModel = new PeopleViewModel()
+                        ViewModel = new CompanyListViewModel()
                     });
                 }, o => true));
             }
@@ -48,7 +38,8 @@ namespace UI.People
         private string _name2;
         private ICommand _changeTExtCommand;
         private ICommand _selectedCommand;
-        private string _selectedPerson;
+        private DataObject _selectedPerson;
+        private readonly ICommand _searchCommand;
         public string Name => "People";
 
         public string Name2
@@ -67,7 +58,23 @@ namespace UI.People
             }
         }
 
-        public string SelectedPerson
+        public ICommand SearchCommand
+        {
+            get
+            {
+                
+                return new RelayCommand(async o => { await Search(); }); ;
+            }
+        }
+
+        private async Task Search()
+        {
+            var krs = new KrsClient();
+            People = new PersonModel();
+            People.RootObject = await krs.Get(Name2);
+        }
+
+        public DataObject SelectedPerson
         {
             get => _selectedPerson;
             set
@@ -76,12 +83,12 @@ namespace UI.People
                 OnPropertyChanged("SelectedPerson");
                 Broker.InvokeNavigationChanged(new HumanFactorNavigationChangetArgs
                 {
-                    ViewModel = new PeopleViewModel()
+                    ViewModel = new CompanyViewModel(_selectedPerson) 
                 });
             }
         }
 
-        public PeopleViewModel()
+        public CompanyListViewModel()
         {
             Name2 = "Jeden";
         }

@@ -60,6 +60,7 @@
       <DependentUpon>CompanyView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Company\CompanyViewModel.cs" />
+    <Compile Include="Helpers\EnterKeyHelpers.cs" />
     <Compile Include="Helpers\ObservableObject.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />
     <Compile Include="Shell\ShellView.xaml.cs">
@@ -74,7 +75,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="People\PeopleView.xaml">
+    <Page Include="Company\CompanyListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -90,11 +91,11 @@
     </Compile>
     <Compile Include="Menu\MenuViewModel.cs" />
     <Compile Include="NavigableViewModel.cs" />
-    <Compile Include="People\PersonModel.cs" />
-    <Compile Include="People\PeopleView.xaml.cs">
-      <DependentUpon>PeopleView.xaml</DependentUpon>
+    <Compile Include="Company\CompanyModel.cs" />
+    <Compile Include="Company\CompanyListView.xaml.cs">
+      <DependentUpon>CompanyListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="People\PeopleViewModel.cs" />
+    <Compile Include="Company\CompanyListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -125,6 +126,10 @@
       <Project>{09f02f28-3ff8-4a3e-9c8b-80f849c2cf11}</Project>
       <Name>EventBroker</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ResourcesLibrary\ResourcesLibrary.csproj">
+      <Project>{b343cd17-a064-42c4-b511-76c594f7c50b}</Project>
+      <Name>ResourcesLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RestClient\RestClient.csproj">
       <Project>{38E0AEF9-5F6A-4F80-BA2A-CB8206B88E36}</Project>
       <Name>RestClient</Name>
@@ -133,6 +138,10 @@
       <Project>{BF3C44AD-D6E2-4370-BFD9-46EB77CE7A66}</Project>
       <Name>UI.Interface</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+    <Folder Include="People\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

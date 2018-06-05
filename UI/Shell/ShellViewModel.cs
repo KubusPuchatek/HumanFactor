@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using HumanFactor;
+using UI.Company;
 using UI.Helpers;
 using UI.Interface;
-using UI.People;
 
 namespace UI.Shell
 {
@@ -30,7 +30,7 @@ namespace UI.Shell
             Initialize();
 
             // Add available pages
-            PageViewModels.Add(new PeopleViewModel());
+            PageViewModels.Add(new CompanyListViewModel());
 
             // Set starting page
             CurrentPageViewModel = PageViewModels[0];
