@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventBroker.cs" />
-    <Compile Include="HumanFactorNavigationChangetArgs.cs" />
+    <Compile Include="HumanFactorNavigationChangedArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
