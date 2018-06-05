@@ -16,5 +16,6 @@
     <ListBox x:Name="Companies"
              DisplayMemberPath="Label"
              ItemsSource="{Binding MenuItemsList}"
+             SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged}"
              />
 </UserControl>

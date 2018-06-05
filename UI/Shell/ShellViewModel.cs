@@ -36,7 +36,7 @@ namespace UI.Shell
             CurrentPageViewModel = PageViewModels[0];
         }
 
-        private void OnNavigationChanged(object sender, HumanFactorNavigationChangetArgs e)
+        private void OnNavigationChanged(object sender, HumanFactorNavigationChangedArgs e)
         {
             if (!PageViewModels.Contains(e.ViewModel))
                 PageViewModels.Add(e.ViewModel);

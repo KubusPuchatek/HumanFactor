@@ -1,12 +1,12 @@
 ﻿namespace HumanFactor
 {
-    public delegate void NavigationEventHandler(object sender, HumanFactorNavigationChangetArgs e);
+    public delegate void NavigationEventHandler(object sender, HumanFactorNavigationChangedArgs e);
 
     public class EventBroker
     {
         public event NavigationEventHandler NavigationChanged;
 
-        public void InvokeNavigationChanged(HumanFactorNavigationChangetArgs e)
+        public void InvokeNavigationChanged(HumanFactorNavigationChangedArgs e)
         {
             NavigationChanged?.Invoke(this, e);
         }

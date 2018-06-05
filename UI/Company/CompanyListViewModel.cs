@@ -26,7 +26,7 @@ namespace UI.Company
             {
                 return _selectedCommand ?? (_selectedCommand = new RelayCommand(async o =>
                 {
-                    Broker.InvokeNavigationChanged(new HumanFactorNavigationChangetArgs
+                    Broker.InvokeNavigationChanged(new HumanFactorNavigationChangedArgs
                     {
                         ViewModel = new CompanyListViewModel()
                     });
@@ -81,7 +81,7 @@ namespace UI.Company
             {
                 _selectedPerson = value; 
                 OnPropertyChanged("SelectedPerson");
-                Broker.InvokeNavigationChanged(new HumanFactorNavigationChangetArgs
+                Broker.InvokeNavigationChanged(new HumanFactorNavigationChangedArgs
                 {
                     ViewModel = new CompanyViewModel(_selectedPerson) 
                 });
