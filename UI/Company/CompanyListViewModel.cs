@@ -90,8 +90,10 @@ namespace UI.Company
 
         public CompanyListViewModel()
         {
-            var scrapper = new GoogleSearch();
-            scrapper.Find("Brand 24");
+/*            Scrapper.FindOnSite("https://www.goldenline.pl/firmy", "Orange");
+            Scrapper.FindGoldenLineEmployerRating("Brand 24");
+            var googleSearch = new GoogleSearch();
+            googleSearch.Find("Brand 24");*/
             Name2 = "Jeden";
         }
 
