@@ -59,5 +59,23 @@ namespace HumanFactor.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AIzaSyDoIia1vvs5NILFe88d2WXR0rstt-ceyng.
+        /// </summary>
+        internal static string ApiKey {
+            get {
+                return ResourceManager.GetString("ApiKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 000430048391355865442:uacsr-ph7x0.
+        /// </summary>
+        internal static string SearchEngineId {
+            get {
+                return ResourceManager.GetString("SearchEngineId", resourceCulture);
+            }
+        }
     }
 }

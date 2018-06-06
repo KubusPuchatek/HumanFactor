@@ -90,6 +90,8 @@ namespace UI.Company
 
         public CompanyListViewModel()
         {
+            var scrapper = new GoogleSearch();
+            scrapper.Find("Brand 24");
             Name2 = "Jeden";
         }
 

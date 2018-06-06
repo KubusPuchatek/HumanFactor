@@ -134,6 +134,10 @@
       <Project>{38E0AEF9-5F6A-4F80-BA2A-CB8206B88E36}</Project>
       <Name>RestClient</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Scrapper\Scrapper.csproj">
+      <Project>{CDD8E3C4-4DD0-4425-AD5D-7EB184907A4E}</Project>
+      <Name>Scrapper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UI.Interface\UI.Interface.csproj">
       <Project>{BF3C44AD-D6E2-4370-BFD9-46EB77CE7A66}</Project>
       <Name>UI.Interface</Name>
