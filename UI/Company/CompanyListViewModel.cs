@@ -34,7 +34,7 @@ namespace UI.Company
             }
         }
 
-        private PersonModel _people;
+        private CompanyModel _companies;
         private string _name2;
         private ICommand _changeTExtCommand;
         private ICommand _selectedCommand;
@@ -48,13 +48,13 @@ namespace UI.Company
             set { _name2 = value; OnPropertyChanged("Name2");}
         }
 
-        public PersonModel People
+        public CompanyModel Companies
         {
-            get => _people;
+            get => _companies;
             set
             {
-                _people = value;
-                OnPropertyChanged("People");
+                _companies = value;
+                OnPropertyChanged("Companies");
             }
         }
 
@@ -70,8 +70,8 @@ namespace UI.Company
         private async Task Search()
         {
             var krs = new KrsClient();
-            People = new PersonModel();
-            People.RootObject = await krs.Get(Name2);
+            Companies = new CompanyModel();
+            Companies.RootObject = await krs.GetCompaniesList(Name2);
         }
 
         public DataObject SelectedPerson

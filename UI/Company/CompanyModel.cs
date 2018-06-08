@@ -3,7 +3,7 @@ using UI.Helpers;
 
 namespace UI.Company
 {
-    public class PersonModel : ObservableObject
+    public class CompanyModel : ObservableObject
     {
         private string _textOne;
         private RootObject _rootObject;
@@ -29,7 +29,7 @@ namespace UI.Company
             }
         }
 
-        public PersonModel()
+        public CompanyModel()
         {
             RootObject = new RootObject();
         }

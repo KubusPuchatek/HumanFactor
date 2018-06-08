@@ -39,7 +39,6 @@ namespace UI.Company
             {
                 _companyDescription = value;
                 OnPropertyChanged("CompanyDescription");
-
             }
         }
 
